@@ -27,9 +27,9 @@ It is possible to setup with Conda.
     conda activate sage
     ```
 
-2. Installation of qarton
+2. Installation of Qarton
 
-    You need Qarton >= 1.0.1. Latest version is [here](https://gitlab.inria.fr/capsule/qarton).
+    You need Qarton >= 1.0.2. Latest version is [here](https://gitlab.inria.fr/capsule/qarton).
     It's simply easier to install it locally. From your virtual environment, use
     the script `install_qarton.sh`. It will download the latest commit on the distant
     qarton repository and install in your virtual environment.
@@ -48,7 +48,7 @@ It is possible to setup with Conda.
     Then you can use the `sage` virtual environment running python 3.12.
 
 Changes in the API between versions make this code incompatible with older releases
-of qarton.
+of Qarton.
 
 ## Using Docker
 
@@ -108,34 +108,34 @@ The following packages contain our new quantum circuits:
 * qisogenies/montgomery: operations on Montgomery curves
 * qisogenies/theta: computing 4-dimensional isogeny chains
 
-The package qt_pegasis_Fp is a copy of the implementation of qt-Pegasis on Fp,
-available [here](https://github.com/Pierrick-Dartois/qt-pegasis-Fp)..
+The package `qt_pegasis_Fp` is a copy of the implementation of qt-Pegasis on Fp,
+available [here](https://github.com/Pierrick-Dartois/qt-pegasis-Fp).
 
 ## Running scripts
 
 We provide the following scripts which were used to test our circuits and obtain
 our resource counts:
 
-* test_norm_equation.py: can be used to test our re-implementation of qlapoti, the
+* `test_norm_equation.py`: can be used to test our re-implementation of qlapoti, the
   norm equation solver used in qt-Pegasis. This script will sample random reduced ideals
   and either run the original qlapoti or our new function. It also allows to replace
   some sub-functions by simulated quantum circuits, in order to test these circuits
   at scale.
 
-* estimate_p1_p2.py: used to estimate the p1 and p2 probabilities which dictate
+* `estimate_p1_p2.py`: used to estimate the p1 and p2 probabilities which dictate
   the number of iterations in the norm equation's quantum searches.
 
-* build_norm_equation_circuit.py: builds entirely the norm equation circuit (precomputation,
+* `build_norm_equation_circuit.py`: builds entirely the norm equation circuit (precomputation,
   quantum search and post-computation), counts its resources and displays a table. The
   script can be run with the "chain" strategy or the "pebbled" strategy
   (space-optimized, with more gates).
 
-* test_isogeny_chain.py: builds the isogeny chain circuit for n = 500 and simulates it.
+* `test_isogeny_chain.py`: builds the isogeny chain circuit for n = 500 and simulates it.
   The script relies on the Qarton simulator, which uses "dummified" circuits. It only
   uses the "chain" construction since the "pebbled" construction is outside the reach
   of the Qarton simulator.
 
-* build_isogeny_chain.py: builds the isogeny chain and display its resource estimates.
+* `build_isogeny_chain.py`: builds the isogeny chain and display its resource estimates.
   It can either build the "chain" construction or the "pebbled" construction.
 
 ## Statement on AI Tools
