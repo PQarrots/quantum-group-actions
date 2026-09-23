@@ -1,0 +1,12 @@
+.DS_Store
+Sage_Code/__pycache__
+C_Code/scripts/__pycache__/
+Sage_Code/theta_lib/pkg/__pycache__/
+Sage_Code/theta_lib/pkg/basis_change/__pycache__/
+Sage_Code/theta_lib/pkg/isogenies/__pycache__/
+Sage_Code/theta_lib/pkg/theta_structures/__pycache__/
+Sage_Code/theta_lib/pkg/utilities/__pycache__/
+C_code/html
+C_code/latex
+.vscode
+C_code/build

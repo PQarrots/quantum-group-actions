@@ -1,0 +1,25 @@
+import sys
+sys.path.insert(0, '..')
+from time import time
+import logging
+
+from sage.all import randint, set_random_seed
+
+from qt_pegasis import qtPegasis, qtPegasisFp
+
+# Setup logging
+logging.getLogger('qt_pegasis').setLevel(logging.INFO)
+logging.getLogger('hd_helpers').setLevel(logging.WARNING)
+
+rr = randint(1, 2**16)
+print(f'{rr = }\n====================')
+set_random_seed(rr)
+
+# Benchmark parameters
+
+lvl = '500' # add P for PEGASIS parameter set
+
+# Load sage
+EGA = qtPegasisFp(lvl)
+frak_a = EGA.sample_ideal()
+EGA.qt_action(frak_a)

@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "quantum-isogeny-circuits"
+version = "0.1.0"
+description = "Quantum isogeny circuits"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE.md"]
+
+[tool.pytest.ini_options]
+addopts = [
+    "-s",
+    "--import-mode=importlib"
+]
+testpaths = [
+    "qisogenies"
+]
+python_files = "*_test.py"
+python_functions = "test_*"
+pythonpath = "."
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+# disallow_untyped_defs = true
+strict = true
+warn_unused_ignores = false
+
+[tool.ruff]
+target-version = "py314"
+ignore = ["UP046", "E741", "E501", "RUF022", "PT011", "ANN401", "SIM102", "TID252", "RUF003", "RUF002"
+]
+
+# Rule families to enable.
+select = [
+    "F",      # Pyflakes: unused imports, unused vars, undefined names...
+    "E", "W", # pycodestyle
+    "I",      # isort import sorting
+    "UP",     # pyupgrade: modern syntax
+    "B",      # flake8-bugbear
+    "A",      # flake8-builtins
+    "Q",      # flake8-quotes
+    "SIM",    # flake8-simplify
+    "TID",    # flake8-tidy-imports
+    "PT",     # pytest style
+    #"C90",    # cyclomatic complexity (mccabe)
+    #"TRY",    # better exception handling
+    #"FBT",    # boolean trap
+    "ICN",    # import conventions
+    #"ERA",    # eradicate dead/commented code
+    "DTZ",    # timezone issues
+    # "SLF",    # access to private members
+    "G",      # logging format
+    # "T10",    # debugger usage
+    # "T20",    # print usage
+    "YTT",    # year/version issues
+    "RUF",    # Ruff-specific rules,
+    "UP", # pyupgrade
+    "ANN" # annotations
+]
+
