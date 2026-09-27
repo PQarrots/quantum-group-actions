@@ -131,9 +131,8 @@ our resource counts:
   (space-optimized, with more gates).
 
 * `test_isogeny_chain.py`: builds the isogeny chain circuit for n = 500 and simulates it.
-  The script relies on the Qarton simulator, which uses "dummified" circuits. It only
-  uses the "chain" construction since the "pebbled" construction is outside the reach
-  of the Qarton simulator.
+  The script relies on the Qarton simulator, which uses "dummified" circuits. It can
+  also be run with the "chain" strategy and the "pebbled" strategy.
 
 * `build_isogeny_chain.py`: builds the isogeny chain and display its resource estimates.
   It can either build the "chain" construction or the "pebbled" construction.
